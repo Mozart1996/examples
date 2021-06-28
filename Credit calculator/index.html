@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div id="wrapper-modal">
+        <div id="overlay"></div>
+        <div id="modal-window">
+            <h2>Выберете конфигурацию вашего автомобиля:</h2>
+            <p>Цвет:</p>
+            <div class="color-config-wrapper">
+                <div class="color-config-wrapper-left">
+                    <img class="car active" src="images/car-blue.png" alt="" data-color="blue">
+                    <img class="car" src="images/car-brown.png" alt="" data-color="brown">
+                    <img class="car" src="images/car-orange.png" alt="" data-color="orange">
+                    <img class="car" src="images/car-pink.png" alt="" data-color="pink">
+                    <img class="car" src="images/car-red.png" alt="" data-color="red">
+                </div>
+                <div class="color-config-wrapper-right color-dots">
+                    <div class="dot blue active" onclick="activeColor('blue')">
+                        <span class="content">Голубой</span>
+                    </div>
+                    <div class="dot brown" onclick="activeColor('brown')">
+                        <span class="content">Коричневый</span>
+                    </div>
+                    <div class="dot orange" onclick="activeColor('orange')">
+                        <span class="content">Оранжевый</span>
+                    </div>
+                    <div class="dot pink" onclick="activeColor('pink')">
+                        <span class="content">Розовый</span>
+                    </div>
+                    <div class="dot red" onclick="activeColor('red')">
+                        <span class="content">Красный</span>
+                    </div>
+                </div>
+            </div>
+            <p>Двигатель:</p>
+            <select name="engine" id="engine">
+                <option value="0">1.6</option>
+                <option value="20000">2.0</option>
+                <option value="40000">2.4</option>
+            </select>
+            <p>Комплектация:</p>
+            <select name="complectation" id="complectation">
+                <option value="0">Базовая</option>
+                <option value="15000">Средняя</option>
+                <option value="30000">Расширенная</option>
+            </select>
+            <p class="">Стоимость машины без допов: <span id="priceOfAuto"></span> ₽</p>
+            <p class="">Дополнительная сумма: <span id="additionalAmount"></span> ₽</p>
+            <div class="buttons-wrapper">
+                <button id="saveConfiguration">СОХРАНИТЬ</button>
+                <button id="cancelConfiguration">ОТМЕНИТЬ</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex-wrapper">
+        <div class="calculator-content">
+            <div class="calculator-content-title">
+                <h1>Рассчитать автокредит</h1>
+            </div>
+            <div class="calculator-content-body">
+                <div class="calculator-content-body-left">
+                    <div class="calculator-content-body-left-inputs">
+                        <div class="input-wrapper">
+                            <button id="open-configure">
+                                <div class="text">Выбрать модификацию авто</div>
+                            </button>
+                        </div>
+                        <div class="input-wrapper">
+                            <div class="title">Первоначальный взнос</div>
+                            <div class="input">
+                                <input type="number" id="an-initial-fee" value="0" class="input-text">
+                            </div>
+                            <div class="input">
+                                <input type="range" min="100000" max="10000000" id="an-initial-fee-range" value="0" class="input-range">
+                            </div>
+                        </div>
+                        <div class="input-wrapper">
+                            <div class="title">Срок кредита</div>
+                            <div class="input">
+                                <input type="number" id="credit-term" value="0" class="input-text">
+                            </div>
+                            <div class="input">
+                                <input type="range" min="1" max="20" id="credit-term-range" value="0" class="input-range">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator-content-body-right">
+                    <div class="final-results-wrapper">
+                        <div class="final-result-item">
+                            <div class="title">Сумма кредита</div>
+                            <div class="value"><span id="amount-of-credit">0</span> ₽</div>
+                        </div>
+                        <div class="final-result-item">
+                            <div class="title">Ежемесячный платеж</div>
+                            <div class="value"><span id="monthly-payment">0</span> ₽</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+   <script src="main.js"></script> 
+</body>
+</html>
