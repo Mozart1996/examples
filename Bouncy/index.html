@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="assets/css/style.css">
+   <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@300;700;900&family=Source+Sans+Pro:ital,wght@0,300;1,300&display=swap"
+      rel="stylesheet">
+   <title>Bouncy</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://unpkg.com/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>  
+   <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+</head>
+
+<body>
+
+   <!-- Sprite -->
+
+   <svg style="display: none">
+      <symbol id="arrow" viewBox="0 0 491.996 491.996">
+         <g>
+            <path d="M484.132,124.986l-16.116-16.228c-5.072-5.068-11.82-7.86-19.032-7.86c-7.208,0-13.964,2.792-19.036,7.86l-183.84,183.848
+               L62.056,108.554c-5.064-5.068-11.82-7.856-19.028-7.856s-13.968,2.788-19.036,7.856l-16.12,16.128
+               c-10.496,10.488-10.496,27.572,0,38.06l219.136,219.924c5.064,5.064,11.812,8.632,19.084,8.632h0.084
+               c7.212,0,13.96-3.572,19.024-8.632l218.932-219.328c5.072-5.064,7.856-12.016,7.864-19.224
+               C491.996,136.902,489.204,130.046,484.132,124.986z"/>
+         </g>
+      </symbol>
+   </svg>
+   <!-- Details sprite -->
+   <svg style="display: none">
+      <symbol id="heart" viewBox="0 -28 512.001 512">
+         <path d="m256 455.515625c-7.289062 0-14.316406-2.640625-19.792969-7.4375-20.683593-18.085937-40.625-35.082031-58.21875-50.074219l-.089843-.078125c-51.582032-43.957031-96.125-81.917969-127.117188-119.3125-34.644531-41.804687-50.78125-81.441406-50.78125-124.742187 0-42.070313 14.425781-80.882813 40.617188-109.292969 26.503906-28.746094 62.871093-44.578125 102.414062-44.578125 29.554688 0 56.621094 9.34375 80.445312 27.769531 12.023438 9.300781 22.921876 20.683594 32.523438 33.960938 9.605469-13.277344 20.5-24.660157 32.527344-33.960938 23.824218-18.425781 50.890625-27.769531 80.445312-27.769531 39.539063 0 75.910156 15.832031 102.414063 44.578125 26.191406 28.410156 40.613281 67.222656 40.613281 109.292969 0 43.300781-16.132812 82.9375-50.777344 124.738281-30.992187 37.398437-75.53125 75.355469-127.105468 119.308594-17.625 15.015625-37.597657 32.039062-58.328126 50.167969-5.472656 4.789062-12.503906 7.429687-19.789062 7.429687zm-112.96875-425.523437c-31.066406 0-59.605469 12.398437-80.367188 34.914062-21.070312 22.855469-32.675781 54.449219-32.675781 88.964844 0 36.417968 13.535157 68.988281 43.882813 105.605468 29.332031 35.394532 72.960937 72.574219 123.476562 115.625l.09375.078126c17.660156 15.050781 37.679688 32.113281 58.515625 50.332031 20.960938-18.253907 41.011719-35.34375 58.707031-50.417969 50.511719-43.050781 94.136719-80.222656 123.46875-115.617188 30.34375-36.617187 43.878907-69.1875 43.878907-105.605468 0-34.515625-11.605469-66.109375-32.675781-88.964844-20.757813-22.515625-49.300782-34.914062-80.363282-34.914062-22.757812 0-43.652344 7.234374-62.101562 21.5-16.441406 12.71875-27.894532 28.796874-34.609375 40.046874-3.453125 5.785157-9.53125 9.238282-16.261719 9.238282s-12.808594-3.453125-16.261719-9.238282c-6.710937-11.25-18.164062-27.328124-34.609375-40.046874-18.449218-14.265626-39.34375-21.5-62.097656-21.5zm0 0"/>
+      </symbol>
+   </svg>
+   <svg style="display: none">
+      <symbol id="lamp" viewBox="0 0 24 24">
+         <g>
+            <path d="m13.5 24h-3c-.7 0-1.5-.6-1.5-1.8v-2.1c0-1-.5-1.9-1.3-2.6-1.8-1.4-2.7-3.4-2.7-5.6.1-3.8 3.2-6.8 6.9-6.9 1.9 0 3.7.7 5 2s2.1 3.1 2.1 5c0 2.1-.9 4.1-2.6 5.4-.9.7-1.4 1.8-1.4 2.8v2.3c0 .8-.7 1.5-1.5 1.5zm-1.5-18c-3.2 0-5.9 2.7-6 5.9 0 1.9.8 3.7 2.3 4.8 1.1.9 1.7 2.1 1.7 3.4v2.1c0 .2 0 .8.5.8h3c.3 0 .5-.2.5-.5v-2.3c0-1.3.7-2.7 1.8-3.6 1.4-1.1 2.2-2.8 2.2-4.6 0-1.6-.6-3.1-1.8-4.3-1.1-1.1-2.6-1.7-4.2-1.7z"/>
+            </g>
+            <g>
+            <path d="m14.5 21h-5c-.3 0-.5-.2-.5-.5s.2-.5.5-.5h5c.3 0 .5.2.5.5s-.2.5-.5.5z"/>
+            </g>
+            <g>
+            <path d="m12 3c-.3 0-.5-.2-.5-.5v-2c0-.3.2-.5.5-.5s.5.2.5.5v2c0 .3-.2.5-.5.5z"/>
+            </g>
+            <g>
+            <path d="m18.7 5.8c-.1 0-.3 0-.4-.1-.2-.2-.2-.5 0-.7l1.4-1.4c.2-.2.5-.2.7 0s.2.5 0 .7l-1.4 1.4s-.2.1-.3.1z"/>
+            </g>
+            <g>
+            <path d="m23.5 12.5h-2c-.3 0-.5-.2-.5-.5s.2-.5.5-.5h2c.3 0 .5.2.5.5s-.2.5-.5.5z"/>
+            </g>
+            <g>
+            <path d="m20.1 20.6c-.1 0-.3 0-.4-.1l-1.4-1.4c-.2-.2-.2-.5 0-.7s.5-.2.7 0l1.4 1.4c.2.2.2.5 0 .7 0 .1-.1.1-.3.1z"/>
+            </g>
+            <g><path d="m3.9 20.6c-.1 0-.3 0-.4-.1-.2-.2-.2-.5 0-.7l1.4-1.4c.2-.2.5-.2.7 0s.2.5 0 .7l-1.4 1.4c-.1.1-.2.1-.3.1z"/>
+            </g>
+            <g>
+            <path d="m2.5 12.5h-2c-.3 0-.5-.2-.5-.5s.2-.5.5-.5h2c.3 0 .5.2.5.5s-.2.5-.5.5z"/>
+            </g>
+            <g>
+            <path d="m5.3 5.8c-.1 0-.3 0-.4-.1l-1.4-1.5c-.2-.2-.2-.5 0-.7s.5-.2.7 0l1.4 1.4c.2.2.2.5 0 .7-.1.1-.2.2-.3.2z"/>
+            </g>
+            <g>
+            <path d="m16 12.5c-.3 0-.5-.2-.5-.5 0-1.9-1.6-3.5-3.5-3.5-.3 0-.5-.2-.5-.5s.2-.5.5-.5c2.5 0 4.5 2 4.5 4.5 0 .3-.2.5-.5.5z"/>
+            </g>
+      </symbol>
+   </svg>
+   <svg style="display: none">
+      <symbol id="mouse" viewBox="0 0 473.3 473.3">
+         <g>
+            <path d="M261.45,124.7h-14.4l0.1-13.2c0.2-22.5,18.5-40.6,41-40.6c33.6,0,60.9-27.3,61-60.9c0-5.5-4.5-10-10-10s-10,4.5-10,10
+            c0,22.6-18.4,41-41,41c-33.4,0-60.6,26.9-61,60.4l-0.2,13.3h-15.1c-51.4,0-93.2,42.2-93.2,93.7v136.8c0,65.1,52.9,118.1,118,118.1
+            s118-53,118-118.1V218.4C354.65,166.9,312.85,124.7,261.45,124.7z M138.65,218.4c0-40.5,32.8-73.7,73.2-73.7h14.8v109h-88V218.4z
+            M334.65,355.2c0,54.1-43.9,98-98,98s-98-43.9-98-98v-81.5h196V355.2z M334.65,253.7h-88v-109h14.8c40.4,0,73.2,33.2,73.2,73.7
+            V253.7z"/>
+         </g>
+      </symbol>
+   </svg>
+   <!-- Services sprite -->
+   <svg style="display: none">
+      <symbol id="joystick" viewBox="0 0 512 512">
+         <g><path d="m128.264 282.045h29.859v29.859h-29.859z"/><path d="m128.264 341.763h29.859v29.859h-29.859z"/><path d="m158.123 311.904h29.859v29.859h-29.859z"/><path d="m98.405 311.904h29.859v29.859h-29.859z"/><path d="m507.624 406.67-46.25-133.388c-7.662-24.837-25.465-45.542-48.884-56.835-23.507-11.335-50.91-12.341-75.182-2.758-3.75 1.48-7.393 3.193-10.904 5.126-15.621-13.917-35.01-22.893-55.683-25.817v-76.136c0-15.326 12.469-27.795 27.794-27.795 15.326 0 27.794 12.469 27.794 27.795 0 32.084 26.102 58.186 58.186 58.186h1.838c33.098 0 60.024-26.927 60.024-60.024v-115.024h-29.857v115.023c0 16.633-13.532 30.165-30.165 30.165h-1.838c-15.62 0-28.327-12.708-28.327-28.327 0-31.79-25.863-57.654-57.653-57.654s-57.653 25.863-57.653 57.654v76.171c-20.556 2.95-39.84 11.883-55.394 25.711-3.471-1.903-7.071-3.593-10.776-5.055-24.274-9.583-51.676-8.579-75.183 2.758-23.419 11.293-41.222 31.998-48.884 56.835l-46.251 133.389c-6.234 17.98-5.795 37.619 1.237 55.303 7.032 17.683 20.2 32.262 37.078 41.051 11.618 6.047 24.177 8.976 36.621 8.976 21.99 0 43.624-9.145 59.077-26.377l79.605-88.767c6.235-6.951 14.213-11.978 22.972-14.682v25.789h29.859v-25.852c8.841 2.688 16.896 7.737 23.18 14.744l79.605 88.767c24.199 26.982 63.551 34.137 95.697 17.399 16.879-8.789 30.047-23.367 37.079-41.051 7.033-17.681 7.472-37.321 1.238-55.3zm-52.106 69.868c-20.048 10.438-44.588 5.977-59.677-10.85l-79.605-88.767c-11.982-13.36-28.015-22.265-45.409-25.516v-30.544h-29.859v30.584c-17.314 3.283-33.267 12.169-45.202 25.475l-79.605 88.767c-15.091 16.828-39.633 21.289-59.678 10.85-21.6-11.247-31.872-37.078-23.894-60.087l46.339-133.644.174-.535c5.267-17.265 17.121-31.092 33.38-38.933 8.845-4.265 18.263-6.408 27.718-6.408 32.854 0 49.44 21.061 49.44 21.061l9.107-10.342c14.464-16.423 35.295-25.844 57.151-25.844 21.897 0 42.753 9.449 57.221 25.924l9.124 10.39s15.222-13.195 26.031-16.661c17.188-5.511 34.989-5.961 51.248 1.88 16.258 7.841 28.113 21.667 33.38 38.933l.082.268 46.43 133.91c7.977 23.011-2.296 48.843-23.896 60.089z"/><path d="m370.104 282.045c-24.696 0-44.789 20.092-44.789 44.789s20.092 44.789 44.789 44.789 44.789-20.092 44.789-44.789c-.001-24.698-20.093-44.789-44.789-44.789zm0 59.718c-8.232 0-14.93-6.697-14.93-14.93s6.697-14.93 14.93-14.93c8.232 0 14.93 6.697 14.93 14.93-.001 8.233-6.698 14.93-14.93 14.93z"/><path d="m220.887 266.504h70.018v29.859h-70.018z"/></g>
+      </symbol>
+   </svg>
+   <svg style="display: none">
+      <symbol id="roller" viewBox="0 0 512 512">
+         <path d="M453.772,20h-352.4a26.029,26.029,0,0,0-26,26V78.021A49.211,49.211,0,0,0,32.228,126.79v35.458A49.2,49.2,0,0,0,81.376,211.4H235.5a37.192,37.192,0,0,1,37.149,37.149v27.933H220.821a6,6,0,0,0-5.934,6.889l1.559,10.4a27.375,27.375,0,0,0,21.567,22.9V440.441h-4.787a6,6,0,0,0-6,6V466a26.029,26.029,0,0,0,26,26h48.7a26.029,26.029,0,0,0,26-26V446.441a6,6,0,0,0-6-6h-4.787V316.662a27.374,27.374,0,0,0,21.567-22.9l1.559-10.4a6,6,0,0,0-5.933-6.889H284.653V248.545A49.2,49.2,0,0,0,235.5,199.4H81.376a37.191,37.191,0,0,1-37.148-37.148V126.79A37.2,37.2,0,0,1,75.376,90.133v31.149a26.029,26.029,0,0,0,26,26h352.4a26.029,26.029,0,0,0,26-26V46A26.029,26.029,0,0,0,453.772,20ZM315.922,466a14.015,14.015,0,0,1-14,14h-48.7a14.015,14.015,0,0,1-14-14V452.441h76.7Zm-65.909-25.559V317.249h55.122V440.441Zm77.348-151.963-.526,3.506a15.48,15.48,0,0,1-15.4,13.265H243.716a15.481,15.481,0,0,1-15.4-13.265l-.525-3.506Zm140.411-167.2a14.015,14.015,0,0,1-14,14h-352.4a14.016,14.016,0,0,1-14-14V46a14.016,14.016,0,0,1,14-14h352.4a14.015,14.015,0,0,1,14,14Z"/>
+      </symbol>
+   </svg>
+   <svg style="display: none">
+      <symbol id="power-cable" viewBox="0 0 128 128">
+         <g>
+            <path d="M91.751,56.25A1.751,1.751,0,0,0,93.5,54.5v-10a1.75,1.75,0,0,0-3.5,0v10A1.751,1.751,0,0,0,91.751,56.25Z"/><path d="M49,50.083H79a1.75,1.75,0,0,0,0-3.5H49a1.75,1.75,0,0,0,0,3.5Z"/><path d="M49,59.083H79a1.75,1.75,0,0,0,0-3.5H49a1.75,1.75,0,0,0,0,3.5Z"/><path d="M103.808,25.442H89.33V6.5a1.751,1.751,0,0,0-1.75-1.75h-6A1.751,1.751,0,0,0,79.83,6.5V25.442H48.17V6.5a1.751,1.751,0,0,0-1.75-1.75h-6A1.751,1.751,0,0,0,38.67,6.5V25.442H24.192a1.751,1.751,0,0,0-1.75,1.75v9a1.75,1.75,0,0,0,1.75,1.75H28.5V59.95a13.827,13.827,0,0,0,2.99,8.559l4.26,5.362V80.35A13.765,13.765,0,0,0,49.5,94.1h3.75v7.25A1.751,1.751,0,0,0,55,103.1h4.25v18.4A1.751,1.751,0,0,0,61,123.25h6a1.751,1.751,0,0,0,1.75-1.75V103.1H73a1.751,1.751,0,0,0,1.75-1.75V94.1H78.5A13.765,13.765,0,0,0,92.25,80.35V73.871l4.261-5.363A13.828,13.828,0,0,0,99.5,59.95V37.942h4.308a1.75,1.75,0,0,0,1.75-1.75v-9A1.751,1.751,0,0,0,103.808,25.442ZM83.33,8.25h2.5V25.442h-2.5Zm-41.16,0h2.5V25.442h-2.5Zm23.08,111.5h-2.5V103.1h2.5Zm6-20.15H56.75V94.1h14.5ZM96,59.95a10.31,10.31,0,0,1-2.23,6.381l-4.64,5.84a1.748,1.748,0,0,0-.38,1.089v7.09A10.261,10.261,0,0,1,78.5,90.6h-29A10.261,10.261,0,0,1,39.25,80.35V73.26a1.748,1.748,0,0,0-.38-1.089l-4.639-5.839A10.31,10.31,0,0,1,32,59.95V37.942H96Zm6.058-25.508H97.774l-.024,0-.024,0H30.274l-.024,0-.024,0H25.942v-5.5h76.116Z"/>
+            </g>
+      </symbol>
+   </svg>
+   <svg style="display: none">
+      <symbol id="settings" viewBox="0 0 511 511.99968">
+         <path d="m347.339844 155.148438c-5.519532 0-10 4.46875-10 9.996093 0 5.523438 4.480468 10 10 10 5.53125 0 10-4.476562 10-10 0-5.527343-4.46875-9.996093-10-9.996093zm0 0"/><path d="m165.644531 336.839844c-5.53125 0-10 4.480468-10 10 0 5.53125 4.46875 10 10 10 5.519531 0 10-4.46875 10-10 0-5.519532-4.480469-10-10-10zm0 0"/><path d="m500.058594 61.519531c-3.375-.785156-6.921875.234375-9.359375 2.695313l-41.457031 41.785156h-19.875l-21.878907-22.667969v-20.152343l40.863281-41.472657c2.417969-2.453125 3.402344-5.980469 2.601563-9.335937-.796875-3.351563-3.265625-6.054688-6.53125-7.15625-10.265625-3.460938-21.007813-5.214844-31.933594-5.214844-32.570312 0-62.160156 15.1875-81.183593 41.667969-17.804688 24.789062-23.292969 55.167969-15.429688 84.242187l-73.660156 73.660156-122.71875-123v-24.140624c0-3.511719-1.84375-6.769532-4.855469-8.574219l-70.707031-42.429688c-3.9375-2.363281-8.972656-1.742187-12.214844 1.503907l-28.28125 28.277343c-3.242188 3.246094-3.863281 8.28125-1.503906 12.21875l42.421875 70.707031c1.804687 3.011719 5.058593 4.851563 8.570312 4.855469l24.132813.007813 122.730468 123-73.378906 73.378906c-29.074218-7.859375-59.46875-2.363281-84.269531 15.453125-26.464844 19.011719-41.640625 48.59375-41.640625 81.164063 0 10.921874 1.753906 21.667968 5.214844 31.929687 1.105468 3.285156 3.835937 5.765625 7.210937 6.546875 3.378907.785156 6.921875-.234375 9.363281-2.695312l41.453126-41.78125h19.984374l22.769532 22.769531v19.984375l-41.78125 41.453125c-2.460938 2.441406-3.480469 5.984375-2.695313 9.363281.78125 3.375 3.261719 6.105469 6.546875 7.210938 10.261719 3.460937 21.007813 5.214843 31.929688 5.214843 32.570312 0 62.148437-15.179687 81.164062-41.644531 17.816406-24.800781 23.3125-55.191406 15.453125-84.265625l58.933594-58.933594 13.5 14.664063-6.195313 6.191406c-3.90625 3.90625-3.90625 10.238281 0 14.144531 3.90625 3.902344 10.234376 3.902344 14.144532 0l5.609375-5.609375 126.664062 137.585938c.09375.101562.191407.199218.289063.296875 23.4375 23.4375 61.410156 23.445312 84.859375-.003907 23.382812-23.394531 23.382812-61.460937 0-84.855468-.101563-.101563-.207031-.199219-.3125-.296875l-137.800781-126.421875 5.546874-5.546875c3.90625-3.902344 3.90625-10.234375 0-14.140625s-10.234374-3.90625-14.144531 0l-6.152343 6.15625-14.691407-13.484375 59.21875-59.21875c8.417969 2.25 17.105469 3.390625 25.90625 3.390625 55.140625 0 99.996094-44.859375 99.996094-99.996094 0-10.925781-1.753906-21.667969-5.214844-31.933594-1.105469-3.285156-3.835937-5.765625-7.210937-6.546875zm-411.773438 40.414063c-1.875-1.878906-4.417968-2.835938-7.074218-2.835938l-22.617188-.007812-35.492188-59.257813 17.238282-17.238281 59.15625 35.5v22.617188c0 2.648437 1.050781 5.1875 2.921875 7.0625l125.65625 125.941406-14.144531 14.140625zm254.363282 195.0625 138.269531 126.847656c15.445312 15.609375 15.398437 40.882812-.144531 56.433594-15.578126 15.578125-40.796876 15.625-56.4375.136718l-127.078126-138.035156zm-14.75-13.535156-44.199219 44.191406-13.5-14.664063 43.007812-43.011719zm84.589843-103.464844c-8.746093 0-17.347656-1.402344-25.558593-4.167969-3.597657-1.207031-7.574219-.277344-10.261719 2.40625-50.132813 50.132813-158.15625 158.152344-197.933594 197.933594-2.6875 2.6875-3.621094 6.664062-2.40625 10.265625 8.3125 24.683594 4.335937 51.011718-10.914063 72.242187-15.207031 21.167969-38.871093 33.3125-64.917968 33.3125-2.925782 0-5.835938-.160156-8.71875-.46875l31.761718-31.515625c1.890626-1.875 2.957032-4.429687 2.957032-7.097656v-28.289062c0-2.652344-1.054688-5.195313-2.929688-7.070313l-28.628906-28.628906c-1.875-1.875-4.417969-2.929688-7.070312-2.929688h-28.289063c-2.667969 0-5.222656 1.066407-7.101563 2.957031l-31.511718 31.761719c-.3125-2.882812-.46875-5.792969-.46875-8.71875 0-26.050781 12.140625-49.710937 33.3125-64.917969 21.226562-15.25 47.558594-19.230468 72.246094-10.914062 3.597656 1.214844 7.574218.28125 10.261718-2.40625.550782-.546875 197.792969-197.792969 197.933594-197.933594 2.6875-2.6875 3.617188-6.660156 2.40625-10.261718-8.316406-24.683594-4.347656-51.003907 10.890625-72.21875 15.21875-21.1875 38.886719-33.335938 64.9375-33.335938 3.015625 0 6.011719.167969 8.980469.496094l-31.101563 31.566406c-1.84375 1.871094-2.875 4.390625-2.875 7.015625v28.289063c0 2.59375 1.003907 5.082031 2.804688 6.945312l27.628906 28.628906c1.882813 1.953125 4.480469 3.054688 7.195313 3.054688h28.289062c2.664062 0 5.21875-1.0625 7.097656-2.957032l31.511719-31.757812c.3125 2.882812.46875 5.792969.46875 8.71875 0 44.109375-35.886719 79.996094-79.996094 79.996094zm0 0"/><path d="m311.988281 186.355469-125.136719 125.136719c-3.902343 3.902343-3.902343 10.234374 0 14.140624 3.90625 3.90625 10.238282 3.90625 14.144532 0l125.136718-125.136718c3.90625-3.902344 3.90625-10.234375 0-14.140625s-10.238281-3.90625-14.144531 0zm0 0"/><path d="m438.355469 452c3.90625 3.894531 10.238281 3.894531 14.144531-.023438 3.898438-3.910156 3.886719-10.242187-.023438-14.140624l-90.136718-89.847657c-3.910156-3.898437-10.246094-3.886719-14.140625.023438-3.902344 3.914062-3.890625 10.242187.019531 14.140625zm0 0"/>
+      </symbol>
+   </svg>
+
+
+   <header class="header">
+      <div class="container">
+         <div class="header_inner">
+            <div class="header_logo">
+               <span>bouncy</span>
+            </div>
+
+            <nav class="nav">
+               <a href="#" class="nav_link active">Hello</a>
+               <a href="#" class="nav_link">About</a>
+               <a href="#" class="nav_link">Services</a>
+               <a href="#" class="nav_link">Portfolio</a>
+               <a href="#" class="nav_link">Team</a>
+               <a href="#" class="nav_link">Blog</a>
+               <a href="#" class="nav_link">Contact</a>
+            </nav>
+         </div> <!-- /.header_inner -->
+         
+         <div class="header_intro">
+            <h1>we are code cafe</h1>
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
+         </div>
+
+         <div class="arrow_block">
+            <img src="assets/images/ellipse.png" alt="">
+            <svg>
+               <use xlink:href="#arrow"></use>
+            </svg>
+         </div>
+      </div> <!-- /.container -->
+   </header>
+
+   <main>
+      <!-- About -->
+
+      <div class="container">
+         <section class="about_block">
+            <div class="about_info">
+               <h2>This is bouncy</h2>
+               <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
+               <button>Read More</button>
+            </div>
+            <div class="about_image">
+               <img src="assets/images/ipad.png" alt="">
+            </div>
+         </section>
+      </div>
+
+      <!-- Details about bouncy -->
+      <section class="about_details">
+         <div class="container">
+            <div class="center">
+               <h2>details about bouncy</h2>
+               <p class="info_text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+               <div class="details_icons">
+                  <div class="icon_block active_icon">
+                     <svg class="heart">
+                        <use xlink:href="#heart"></use>
+                     </svg>
+                  </div>
+                  <div class="icon_block">
+                     <svg class="mouse">
+                        <use xlink:href="#mouse"></use>
+                     </svg>
+                  </div>
+                  <div class="icon_block">
+                     <svg class="lamp">
+                        <use xlink:href="#lamp"></use>
+                     </svg>
+                  </div>
+               </div>
+               <div class="about_details_text">
+                  <div class="title"><h3>Creative Ideas</h3></div>
+                  <div class="text text_1"><p>At <span class="green">vero</span> eos et accusamus et iusto odio dignissimos <strong>ducimus</strong> qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores </p></div>
+                  <div class="text text_2"><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque <strong>corrupti quos</strong> dolores et quas molestias <span class="green">excepturi</span> sint occaecati cupiditate non provident, <strong>similique</strong> sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem r</p></div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="projects">
+         <div class="container">
+            <div class="center margin-2">
+               <h2>featured projects</h2>
+               <p class="info_text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+            </div>
+         </div>
+         <div class="project_images">
+            <div class="images_block_1">
+               <img src="assets/images/projects/Layer 83.png" alt="">
+            </div>
+            <div class="images_block_2">
+               <img src="assets/images/projects/Layer 17.png" alt="">
+               <img class="hidden" src="assets/images/projects/Layer 14.png" alt="">
+               <div class="images_text_block">
+                  <span>vintage</span>
+               </div>
+            </div>
+            <div class="images_block_3">
+               <img src="assets/images/projects/Layer 18.png" alt="">
+               <img class="hidden" src="assets/images/projects/Layer 15.png" alt="">
+               <div class="images_text_block">
+                  <span>branding</span>
+               </div>
+            </div>
+         </div>
+         <div class="projects_footer">
+            <p>At vero eos et <strong>accusamus</strong> et iusto odio dignissimos ducimus qui blanditiis </p>
+            <button>Submit Now</button>
+         </div>
+      </section>
+
+      <!-- Services -->
+      <section class="services">
+         <div class="container">
+            <div class="center margin-2">
+               <h2>our services</h2>
+               <p class="info_text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+            </div>
+            <div class="service_block">
+               <div class="service_logos">
+                  <div class="icon_block">
+                     <svg class="service_logo">
+                        <use xlink:href="#settings"></use>
+                     </svg>
+                  </div>
+                  <div class="icon_block active_icon">
+                     <svg class="service_logo">
+                        <use xlink:href="#roller"></use>
+                     </svg>
+                  </div>
+                  <div class="icon_block">
+                     <svg class="service_logo">
+                        <use xlink:href="#joystick"></use>
+                     </svg>
+                  </div>
+                  <div class="icon_block">
+                     <svg class="service_logo">
+                        <use xlink:href="#power-cable"></use>
+                     </svg>
+                  </div>
+               </div>
+               <div class="service_text">
+                  <h3>Graphic Design</h3>
+                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti</p>
+                  <p>quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. </p>
+               </div>
+               <div class="service_stat">
+                  <div class="service_stat__block">
+                     <svg class="progress_bar">
+                        <circle cx="60" cy="60" r="52"/>
+                        <circle cx="60" cy="60" r="52"/>
+                     </svg>
+                     <div class="number">
+                        <h5>80<span class="percent">%</span></h5>
+                     </div>
+                     <h4>Branding</h4>
+                  </div>
+                  <div class="service_stat__block">
+                     <svg class="progress_bar">
+                        <circle cx="60" cy="60" r="52"/>
+                        <circle cx="60" cy="60" r="52"/>
+                     </svg>
+                     <div class="number">
+                        <h5>75<span class="percent">%</span></h5>
+                     </div>
+                     <h4>Web Design</h4>
+                  </div>
+                  <div class="service_stat__block">
+                     <svg class="progress_bar">
+                        <circle cx="60" cy="60" r="52"/>
+                        <circle cx="60" cy="60" r="52"/>
+                     </svg>
+                     <div class="number">
+                        <h5>60<span class="percent">%</span></h5>
+                     </div>
+                     <h4>UI / UX</h4>
+                  </div>
+               </div> <!-- /.service_stat -->
+            </div> <!-- /.services_block -->
+         </div>
+      </section>
+
+      <section>
+         <div class="impressed">
+            <div class="container">
+               <div class="impressed_block">
+                  <div class="impressed_info">
+                     <h3>impressed ?</h3>
+                     <p>
+                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
+                     </p>
+                     <div class="impressed_info__author">
+                        <span>- <span class="author">abdullah noman</span></span><br>
+                     </div>
+                     <span class="author_prof">creative director, <span class="green green--no-bold">code cafe</span></span>
+                  </div>
+                  <div class="impressed_photo">
+                     <div class="photo_block">
+                        <img src="assets/images/impressed/monitor.png" alt="">
+                        <span class="photo_title">b<span class="green">o</span>uncy</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- WORKS -->
+
+      <section>
+         <div class="container">
+            <div class="center margin-2">
+               <h2>the portfolio</h2>
+               <p class="info_text info_text--works">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+            </div>
+            <div class="works_nav">
+               <a href="#" class="works_navlink">All Works</a>
+               <a href="#" class="works_navlink">Print</a>
+               <a href="#" class="works_navlink">Identity</a>
+               <a href="#" class="works_navlink">Branding</a>
+               <a href="#" class="works_navlink">Web</a>
+               <a href="#" class="works_navlink">HTML</a>
+               <a href="#" class="works_navlink">Wordpress</a>
+            </div>
+            <div id="works_photos">
+               <div class="works_photo percent_size">
+                  <img src="assets/images/works/work1.png" alt="">
+               </div>
+               <div class="works_photo percent_size">
+                  <img src="assets/images/works/work2.png" alt="">
+               </div>
+               <div class="works_photo percent_size">
+                  <img src="assets/images/works/work3.png" alt="">
+               </div>
+               <div class="works_photo percent_size">
+                  <img src="assets/images/works/work4.png" alt="">
+               </div>
+               <div class="works_photo percent_size">
+                  <img src="assets/images/works/work5.png" alt="">
+               </div>
+               <div class="works_photo percent_size">
+                  <img src="assets/images/works/work6.png" alt="">
+               </div>
+               <div class="works_photo percent_size">
+                  <img src="assets/images/works/work7.png" alt="">
+               </div>
+               <div class="works_photo percent_size">
+                  <img src="assets/images/works/work8.png" alt="">
+               </div>
+               <div class="works_photo percent_size">
+                  <img src="assets/images/works/work9.png" alt="">
+               </div>
+               <div class="works_photo percent_size">
+                  <img src="assets/images/works/work10.png" alt="">
+               </div>
+               <div class="works_photo percent_size">
+                  <img src="assets/images/works/work11.png" alt="">
+               </div>
+               <div class="works_photo percent_size">
+                  <img src="assets/images/works/work12.png" alt="">
+               </div>
+            </div>
+            <div class="under_works">
+               <p>At vero eos et <strong>accusamus</strong> et iusto odio <strong>dignissimos</strong> ducimus qui blanditiis</p>
+               <button>Start Project</button>
+            </div>
+         </div>
+      </section>
+   </main>
+
+   <script src="assets/js/main.js"></script> 
+</body>
+
+</html>
