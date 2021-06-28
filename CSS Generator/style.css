@@ -1,0 +1,48 @@
+h1 {
+   font-size: 48px;
+   margin: 0;
+   text-align: center;
+}
+
+.wrapper_flex {
+   width: 100%;
+   height: 90vh;
+   display: flex;
+   align-items: center;
+   flex-flow: column;
+   justify-content: center;
+}
+
+.wrapper {
+   width: 70%;
+   height: 70%;
+   display: flex;
+   flex-flow: column;
+   justify-content: space-between;
+}
+
+.wrapper_top,
+.wrapper_bottom {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.wrapper_middle {
+   display: flex;
+   justify-content: center;
+}
+
+#cube {
+   width: 200px;
+   height: 200px;
+   background-color: aquamarine;
+}
+
+.total_result {
+   margin-top: 20px;
+}
+
+#btn_result {
+   margin-right: 10px;
+}

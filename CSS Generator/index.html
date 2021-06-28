@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>CSS Generator</title>
+</head>
+<body>
+   <h1>CSS GENERATOR</h1>
+   <div class="wrapper_flex">
+      <div class="wrapper">
+         <div class="wrapper_top">
+            <div class="top_left_range">
+               <input 
+               type="range"
+               class="input"
+               id="tlr"
+               min="0"
+               max="100"
+               value="0"
+               >
+               <div class="result" id="result_tlr">0</div>
+            </div>
+            <div class="top_right_range">
+               <input 
+               type="range"
+               class="input"
+               id="trr"
+               min="0"
+               max="100"
+               value="0"
+               >
+               <div class="result" id="result_trr">0</div>
+            </div>
+         </div>
+         <div class="wrapper_middle">
+            <div id="cube"></div>
+         </div>
+         <div class="wrapper_bottom">
+            <div class="bottom_left_range">
+               <input 
+               type="range"
+               class="input"
+               id="blr"
+               min="0"
+               max="100"
+               value="0"
+               >
+               <div class="result" id="result_blr">0</div>
+            </div>
+            <div class="bottom_right_range">
+               <input 
+               type="range"
+               class="input"
+               id="brr"
+               min="0"
+               max="100"
+               value="0"
+               >
+               <div class="result" id="result_brr">0</div>
+            </div>
+         </div>
+      </div>
+      <div class="total_result">
+         <button id="btn_result">Вычислить результат</button>
+         <span>border-radius: </span><span id="total_result"></span>
+      </div>
+   </div>
+
+   <script src="main.js"></script>
+</body>
+</html>
