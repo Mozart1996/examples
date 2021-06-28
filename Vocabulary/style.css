@@ -1,0 +1,112 @@
+body {
+   margin: 0;
+   padding: 20px;
+   background-color: rgb(226, 224, 224);
+}
+
+* {
+   box-sizing: border-box;
+}
+
+h1, h2 {
+   margin: 0;
+}
+
+h2 {
+   margin-top: 40px;
+}
+
+.input_blocks {
+   display: flex;
+   align-items: flex-end;
+   margin: 60px 0 30px;
+}
+
+.input_item {
+   margin-right: 20px;
+}
+
+.input_item_title {
+   margin-bottom: 10px;
+   font-size: 20px;
+   font-weight: 600;
+}
+
+.input {
+   height: 32px;
+   border: none;
+}
+
+.error {
+   border: 1px solid red;
+}
+
+.btn_wrapper {
+   display: flex;
+   align-self: flex-end;
+}
+
+.add_word_btn {
+   height: 32px;
+   width: 150px;
+   font-size: 16px;
+   border: none;
+   background-color: white;
+   transition: opacity .1s ease-in-out;
+}
+
+.add_word_btn:hover {
+   opacity: 0.7; 
+}
+
+.table_block {
+   margin-top: 30px;
+}
+
+table {
+   width: 300px;
+}
+
+.tr {
+   position: relative;
+}
+
+.eng_word {
+   font-family: Montserrat;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 25px;
+   line-height: 43px;
+   letter-spacing: 0.03em;
+   color: #000000;
+   flex: none;
+   order: 0;
+   align-self: center;
+   margin: 40px 0px;
+}
+ 
+.rus_word {
+   font-family: Montserrat;
+   font-style: normal;
+   font-weight: lighter;
+   font-size: 25px;
+   line-height: 43px;
+   letter-spacing: 0.03em;
+   color: #000000;
+   flex: none;
+   order: 1;
+   align-self: center;
+   margin: 40px 0px;
+}
+
+.btn_delete {
+   background-image: url('btn_delete.svg');
+   background-repeat: no-repeat;
+   background-position: center;
+   width: 12px;
+   height: 12px;
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+}
+
