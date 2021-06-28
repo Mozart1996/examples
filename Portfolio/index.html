@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Портфолио</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            <div class="header_inner">
+
+                <div class="user">
+                    <div class="user_avatar">
+                        <img src="images/logo.png" alt="">
+                    </div>
+                    <div class="user_content">
+                        <div class="user_name">Vova <br>Babchenko</div>
+                        <div class="user_prof">Frontend Developer</div>
+                    </div>
+                </div>
+
+                <nav class="nav">
+                    <a class="nav_link" href="">Work</a>
+                    <a class="nav_link" href="">About me</a>
+                    <a class="nav_link" href="">Blog</a>
+                    <a class="nav_link" href="">Contact</a>
+                    <a class="nav_link nav_link--btn" href="">Hire me</a>
+                </nav>
+
+            </div><!--/.header_inner-->
+        </div><!--/.container-->
+    </div><!--/.header-->
+
+    <div class="container">
+        <div class="intro">
+
+            <div class="intro_info">
+                <h2 class="intro_subtitle">Hello, I'm</h2>
+                <h1 class="intro_title">Vova Babchenko</h1>
+                <div class="intro_text">Frontend Developer</div>
+
+                <div class="intro_social">
+                    <img src="images/icons/behance.png" alt="">
+                    <img src="images/icons/dribbble.png" alt="">
+                    <img src="images/icons/linkedin.png" alt="">
+                    <img src="images/icons/facebook.png" alt="">
+                    <img src="images/icons/instagram.png" alt="">
+                    <img src="images/icons/twitter.png" alt="">
+                </div>
+
+                <button class="button button--btn_hire">hire me</button>
+                <button class="button button--btn_resume" data-modal="#modal_resume">see my resume</button>
+            </div><!--/.intro_info-->
+
+            <div class="intro_photo">
+                <img class="photo_back" src="images/symbols.png" alt="">
+                <img class="photo_ahead" src="images/photo.png" alt="">
+            </div><!--/.intro_photo-->
+
+        </div><!--/.intro-->
+
+       <!--BREADCRUMBS-->
+        <div class="breadcrumbs">
+            <a href="#" class="breadcrumbs_item" data-filter="all">All</a>
+            <a href="#" class="breadcrumbs_item" data-filter="app">App</a>
+            <a href="#" class="breadcrumbs_item" data-filter="website">Website</a>
+            <a href="#" class="breadcrumbs_item" data-filter="interaction">Interacion</a>
+        </div>
+
+        <!--PROJECTS-->
+        <div class="projects">
+
+            <div class="project_col" data-cat="app">
+                <div class="project_item">
+                    <img src="https://placehold.it/370x300" alt="" class="project_photo">
+                    <div class="project_description">
+                        <div class="project_category">app</div>
+                        <div class="project_title_year">
+                            <span class="project_title">project title</span>
+                            <span class="project_date">2018</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project_col" data-cat="interaction">
+                <div class="project_item">
+                    <img src="https://placehold.it/370x300" alt="" class="project_photo">
+                    <div class="project_description">
+                        <div class="project_category">interaction</div>
+                        <div class="project_title_year">
+                            <span class="project_title">project title</span>
+                            <span class="project_date">2018</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project_col" data-cat="app">
+                <div class="project_item">
+                    <img src="https://placehold.it/370x300" alt="" class="project_photo">
+                    <div class="project_description">
+                        <div class="project_category">app</div>
+                        <div class="project_title_year">
+                            <span class="project_title">project title</span>
+                            <span class="project_date">2018</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project_col" data-cat="website">
+                <div class="project_item">
+                    <img src="https://placehold.it/370x300" alt="" class="project_photo">
+                    <div class="project_description">
+                        <div class="project_category">website</div>
+                        <div class="project_title_year">
+                            <span class="project_title">project title</span>
+                            <span class="project_date">2018</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project_col" data-cat="app">
+                <div class="project_item">
+                    <img src="https://placehold.it/370x300" alt="" class="project_photo">
+                    <div class="project_description">
+                        <div class="project_category">app</div>
+                        <div class="project_title_year">
+                            <span class="project_title">project title</span>
+                            <span class="project_date">2018</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project_col" data-cat="website">
+                <div class="project_item">
+                    <img src="https://placehold.it/370x300" alt="" class="project_photo">
+                    <div class="project_description">
+                        <div class="project_category">website</div>
+                        <div class="project_title_year">
+                            <span class="project_title">project title</span>
+                            <span class="project_date">2018</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project_col hide" data-cat="app">
+                <div class="project_item">
+                    <img src="https://placehold.it/370x300" alt="" class="project_photo">
+                    <div class="project_description">
+                        <div class="project_category">app</div>
+                        <div class="project_title_year">
+                            <span class="project_title">project title</span>
+                            <span class="project_date">2018</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project_col hide" data-cat="website">
+                <div class="project_item">
+                    <img src="https://placehold.it/370x300" alt="" class="project_photo">
+                    <div class="project_description">
+                        <div class="project_category">website</div>
+                        <div class="project_title_year">
+                            <span class="project_title">project title</span>
+                            <span class="project_date">2018</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project_col hide" data-cat="interaction">
+                <div class="project_item">
+                    <img src="https://placehold.it/370x300" alt="" class="project_photo">
+                    <div class="project_description">
+                        <div class="project_category">interaction</div>
+                        <div class="project_title_year">
+                            <span class="project_title">project title</span>
+                            <span class="project_date">2018</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!--/.projects-->
+
+        <div class="btn_work" id="load_more">
+            <button class="button">load more work</button>
+        </div>
+    </div><!--/.container-->
+
+
+    <!--MODAL-->
+    <div class="modal" id="modal_project">
+        <div class="modal_dialog">
+
+            <div class="modal_work">
+                <div class="modal_work_preview">
+                    <img class="modal_work_photo" src="https://placehold.it/790x780" alt="">
+                </div>
+                <div class="modal_work_content">
+
+                    <div class="modal_work_header">
+                        <h3 class="modal_work_title">Project title</h3>
+                        <div class="modal_work_info">
+                            category | 2018
+                        </div>
+                    </div>
+
+                    <img src="images/icons/close.svg" height="40" alt="" class="modal_dialog_close">
+
+                    <div class="modal_work_client">
+                        <div>Client:</div>
+                        <div>Creative Agency</div>
+                    </div>
+
+                    <div class="modal_work_text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium facere quod cupiditate iusto! Reiciendis recusandae quis nemo aut voluptatem, numquam accusamus vero harum eligendi, expedita earum? Culpa architecto cupiditate maxime!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium facere quod cupiditate iusto! Reiciendis recusandae quis nemo aut voluptatem, numquam accusamus vero harum eligendi, expedita earum? Culpa architecto cupiditate maxime!</p>
+                    </div>
+
+                    <div class="modal_work_footer">
+                        <button class="modal_work_btn">
+                        <img class="icon_prev" src="images/icons/left-arrow.svg" height="12" alt="">previous</button>
+
+                        <button class="modal_work_btn">next
+                        <img class="icon_next" src="images/icons/next.svg" height="12" alt=""></button>
+                    </div>
+
+                </div><!--/.modal_work_content-->
+            </div><!--/.modal_work-->
+        </div><!--/.modal_dialog-->
+    </div><!--/.modal-->
+
+    <div class="modal" id="modal_resume">
+        <div class="modal_dialog">
+
+            <img src="images/icons/close.svg" height="40" alt="" class="modal_dialog_close">
+
+            <div class="modal_content">
+                <h3 class="modal_title">resume</h3>
+                <div class="modal_buttons">
+                    <button class="button">download pdf</button>
+                    <button class="button">print</button>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline_col timeline_col--left">
+                        <h4 class="timeline_title">experience</h4>
+                        <div class="timeline_information">
+                            <div class="period_of_time">2017 - <b>Present</b></div>
+                            <div class="job">Freelancer</div>
+                            <div class="position">Art Director</div>
+                            <div class="timeline_text">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsa provident sint, nesciunt dolor, velit ratione sed molestiae fugit magnam sunt fuga pariatur, totam ab iusto. Possimus, nulla expedita tenetur.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline_information">
+                            <div class="period_of_time">2017 - <span>Present</span></div>
+                            <div class="job">Freelancer</div>
+                            <div class="position">Art Director</div>
+                            <div class="timeline_text">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsa provident sint, nesciunt dolor, velit ratione sed molestiae fugit magnam sunt fuga pariatur, totam ab iusto. Possimus, nulla expedita tenetur.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline_information">
+                            <div class="period_of_time">2017 - <span>Present</span></div>
+                            <div class="job">Freelancer</div>
+                            <div class="position">Art Director</div>
+                            <div class="timeline_text">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsa provident sint, nesciunt dolor, velit ratione sed molestiae fugit magnam sunt fuga pariatur, totam ab iusto. Possimus, nulla expedita tenetur.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline_information">
+                            <div class="period_of_time">2017 - <span>Present</span></div>
+                            <div class="job">Freelancer</div>
+                            <div class="position">Art Director</div>
+                            <div class="timeline_text">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsa provident sint, nesciunt dolor, velit ratione sed molestiae fugit magnam sunt fuga pariatur, totam ab iusto. Possimus, nulla expedita tenetur.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline_col timeline_col--right">
+                        <h4 class="timeline_title">education</h4>
+                        <div class="timeline_information">
+                            <div class="period_of_time">2005 - 2010</div>
+                            <div class="job">UI/UX Design</div>
+                            <div class="location">LA University, USA</div>
+                         </div>
+                         <div class="timeline_information">
+                            <div class="period_of_time">2005 - 2010</div>
+                            <div class="job">UI/UX Design</div>
+                            <div class="location">LA University, USA</div>
+                         </div>
+
+                         <h4 class="timeline_title timeline_title--interval">skills</h4>
+                         <div class="skills">
+                             <div class="skills_left">
+                                 <div>UI/UX Design</div>
+                             </div>
+                             <div class="skills_right">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar_progress" style="width: 80%"></div>
+                                 </div>
+                             </div>
+
+                             <div class="skills_left">
+                                 <div>Illustrator</div>
+                             </div>
+                             <div class="skills_right">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar_progress" style="width: 50%"></div>
+                                 </div>
+                             </div>
+
+                             <div class="skills_left">
+                                 <div>Photoshop</div>
+                             </div>
+                             <div class="skills_right">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar_progress" style="width: 70%"></div>
+                                 </div>
+                             </div>
+
+                             <div class="skills_left">
+                                 <div>Sketch</div>
+                             </div>
+                             <div class="skills_right">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar_progress" style="width: 20%"></div>
+                                 </div>
+                             </div>
+                         </div><!--/.skills-->
+
+                         <h4 class="timeline_title">awards</h4>
+                         <div class="awards">
+                             <div class="awards_left">
+                                 <div class="period_of_time">2016</div>
+                             </div>
+                             <div class="awards_right">
+                                 <div class="award">the best app interface</div>
+                                 <div class="position">UI/UX Magazine</div>
+                                 <div class="timeline_text">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                 </div>
+                             </div>
+                         </div>
+
+                         <div class="awards">
+                             <div class="awards_left">
+                                 <div class="period_of_time">2016</div>
+                             </div>
+                             <div class="awards_right">
+                                 <div class="award">the best website</div>
+                                 <div class="position">UI/UX Magazine</div>
+                                 <div class="timeline_text">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                 </div>
+                             </div>
+                         </div>
+                    </div>
+
+                </div>
+                <div class="btn_align">
+                    <button class="button">hire me</button>
+                </div>
+            </div><!--/.modal_content-->
+
+        </div><!--/.modal_dialog-->
+    </div><!--/.modal-->
+
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
